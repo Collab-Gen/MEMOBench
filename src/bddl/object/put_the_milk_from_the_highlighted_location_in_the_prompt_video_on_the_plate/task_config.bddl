@@ -1,0 +1,41 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the milk from the highlighted location in the prompt video on the plate)
+
+  (:regions
+    (center_plate_region
+      (:target kitchen_table) (:ranges ( (-0.05 -0.05 0.05 0.05) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+
+    (pos_left (:target kitchen_table) (:ranges ( (-0.02 0.23 0.02 0.27) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (pos_right (:target kitchen_table) (:ranges ( (-0.02 -0.27 0.02 -0.23) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_1 - plate
+    milk_left milk_right - milk
+  )
+
+  (:obj_of_interest
+    plate_1 milk_left milk_right
+  )
+
+  (:init
+    (On plate_1 kitchen_table_center_plate_region)
+    (On milk_left kitchen_table_pos_left)
+    (On milk_right kitchen_table_pos_right)
+  )
+
+  (:goal
+    (And
+      (On milk_right plate_1)
+
+      (Not (On milk_left plate_1))
+    )
+  )
+)

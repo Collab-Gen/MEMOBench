@@ -1,0 +1,64 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the butter picked up in the prompt video on the plate)
+
+  (:regions
+    (plate_init_region
+      (:target kitchen_table) (:ranges ( (-0.15 0.15 -0.10 0.25) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+    
+    (pos1 (:target kitchen_table) (:ranges ( (0.0 0.20 0.02 0.22) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos2 (:target kitchen_table) (:ranges ( (0.0 0.15 0.02 0.17) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos3 (:target kitchen_table) (:ranges ( (0.0 0.10 0.02 0.12) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos4 (:target kitchen_table) (:ranges ( (0.0 0.05 0.02 0.07) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (pos5 (:target kitchen_table) (:ranges ( (0.0 -0.01 0.02 0.01) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (pos6 (:target kitchen_table) (:ranges ( (0.0 -0.05 0.02 -0.03) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos7 (:target kitchen_table) (:ranges ( (0.0 -0.10 0.02 -0.08) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos8 (:target kitchen_table) (:ranges ( (0.0 -0.15 0.02 -0.13) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos9 (:target kitchen_table) (:ranges ( (0.0 -0.20 0.02 -0.18) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_1 - plate
+    butter_1 butter_2 butter_3 butter_4 butter_5 butter_6 butter_7 butter_8 butter_9 - butter
+  )
+
+  (:obj_of_interest
+    plate_1 butter_1 butter_2 butter_3 butter_4 butter_5 butter_6 butter_7 butter_8 butter_9
+  )
+
+  (:init
+    (On plate_1 kitchen_table_plate_init_region)
+    
+    (On butter_1 kitchen_table_pos1)
+    (On butter_2 kitchen_table_pos2)
+    (On butter_3 kitchen_table_pos3)
+    (On butter_4 kitchen_table_pos4)
+    (On butter_5 kitchen_table_pos5)
+    (On butter_6 kitchen_table_pos6)
+    (On butter_7 kitchen_table_pos7)
+    (On butter_8 kitchen_table_pos8)
+    (On butter_9 kitchen_table_pos9)
+  )
+
+  (:goal
+    (And 
+      (On butter_5 plate_1)
+      
+      (Not 
+        (Or 
+          (On butter_1 plate_1) (On butter_2 plate_1) 
+          (On butter_3 plate_1) (On butter_4 plate_1) 
+          (On butter_6 plate_1) (On butter_7 plate_1) 
+          (On butter_8 plate_1) (On butter_9 plate_1)
+        )
+      )
+    )
+  )
+)

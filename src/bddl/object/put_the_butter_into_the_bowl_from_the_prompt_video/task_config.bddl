@@ -1,0 +1,44 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the butter into the bowl from the prompt video)
+
+  (:regions
+    (butter_init_region
+      (:target kitchen_table) (:ranges ( (-0.15 -0.05 -0.05 0.05) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+
+    (pos_bowl_left  (:target kitchen_table) (:ranges ( (0.09  0.19  0.11  0.21) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_bowl_mid   (:target kitchen_table) (:ranges ( (0.09 -0.01  0.11  0.01) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_bowl_right (:target kitchen_table) (:ranges ( (0.09 -0.21  0.11 -0.19) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    bowl_left bowl_mid bowl_right - akita_black_bowl
+    butter_1 - butter
+  )
+
+  (:obj_of_interest
+    bowl_left bowl_mid bowl_right butter_1
+  )
+
+  (:init
+    (On butter_1 kitchen_table_butter_init_region)
+    
+    (On bowl_left kitchen_table_pos_bowl_left)
+    (On bowl_mid kitchen_table_pos_bowl_mid)
+    (On bowl_right kitchen_table_pos_bowl_right)
+  )
+
+  (:goal
+    (And
+      (On butter_1 bowl_left)
+
+      (Not (On butter_1 bowl_mid))
+      (Not (On butter_1 bowl_right))
+    )
+  )
+)

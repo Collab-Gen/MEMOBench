@@ -1,0 +1,64 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the milk picked up in the prompt video on the plate)
+
+  (:regions
+    (plate_init_region
+      (:target kitchen_table) (:ranges ( (-0.25 -0.05 -0.15 0.05) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+    
+    (pos1 (:target kitchen_table) (:ranges ( (0.0 0.32 0.02 0.34) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos2 (:target kitchen_table) (:ranges ( (0.0 0.24 0.02 0.26) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos3 (:target kitchen_table) (:ranges ( (0.0 0.16 0.02 0.18) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos4 (:target kitchen_table) (:ranges ( (0.0 0.08 0.02 0.10) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (pos5 (:target kitchen_table) (:ranges ( (0.0 -0.01 0.02 0.01) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (pos6 (:target kitchen_table) (:ranges ( (0.0 -0.08 0.02 -0.06) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos7 (:target kitchen_table) (:ranges ( (0.0 -0.16 0.02 -0.14) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos8 (:target kitchen_table) (:ranges ( (0.0 -0.24 0.02 -0.22) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos9 (:target kitchen_table) (:ranges ( (0.0 -0.32 0.02 -0.30) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_1 - plate
+    milk_1 milk_2 milk_3 milk_4 milk_5 milk_6 milk_7 milk_8 milk_9 - milk
+  )
+
+  (:obj_of_interest
+    plate_1 milk_1 milk_2 milk_3 milk_4 milk_5 milk_6 milk_7 milk_8 milk_9
+  )
+
+  (:init
+    (On plate_1 kitchen_table_plate_init_region)
+    
+    (On milk_1 kitchen_table_pos1)
+    (On milk_2 kitchen_table_pos2)
+    (On milk_3 kitchen_table_pos3)
+    (On milk_4 kitchen_table_pos4)
+    (On milk_5 kitchen_table_pos5)
+    (On milk_6 kitchen_table_pos6)
+    (On milk_7 kitchen_table_pos7)
+    (On milk_8 kitchen_table_pos8)
+    (On milk_9 kitchen_table_pos9)
+  )
+
+  (:goal
+    (And 
+      (On milk_5 plate_1)
+      
+      (Not 
+        (Or 
+          (On milk_1 plate_1) (On milk_2 plate_1) 
+          (On milk_3 plate_1) (On milk_4 plate_1) 
+          (On milk_6 plate_1) (On milk_7 plate_1) 
+          (On milk_8 plate_1) (On milk_9 plate_1)
+        )
+      )
+    )
+  )
+)

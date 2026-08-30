@@ -1,0 +1,61 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language find the specific milk pointed out in the prompt video and put it on the plate)
+
+  (:regions
+    (plate_init_region
+      (:target kitchen_table) (:ranges ( (-0.05 -0.25 0.05 -0.15) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+    
+    (target_milk_init_region
+      (:target kitchen_table) (:ranges ( (0.05 -0.05 0.10 0.05) )) (:yaw_rotation ( (-3.14 3.14) ))
+    )
+    
+    (fake_milk_init_region
+      (:target kitchen_table) (:ranges ( (0.15 0.10 0.20 0.15) )) (:yaw_rotation ( (-3.14 3.14) ))
+    )
+    
+    (butter_init_region
+      (:target kitchen_table) (:ranges ( (0.10 0.05 0.15 0.10) )) (:yaw_rotation ( (-3.14 3.14) ))
+    )
+    
+    (ketchup_init_region
+      (:target kitchen_table) (:ranges ( (0.15 -0.10 0.20 0.0) )) (:yaw_rotation ( (-3.14 3.14) ))
+    )
+    
+    (bbq_sauce_init_region
+      (:target kitchen_table) (:ranges ( (0.05 0.15 0.10 0.20) )) (:yaw_rotation ( (-3.14 3.14) ))
+    )
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_1 - plate
+    target_milk fake_milk_1 - milk
+    butter_1 - butter
+    ketchup_1 - ketchup
+    bbq_sauce_1 - bbq_sauce
+  )
+
+  (:obj_of_interest
+    plate_1 target_milk fake_milk_1 butter_1 ketchup_1 bbq_sauce_1
+  )
+
+  (:init
+    (On plate_1 kitchen_table_plate_init_region)
+    (On target_milk kitchen_table_target_milk_init_region)
+    (On fake_milk_1 kitchen_table_fake_milk_init_region)
+    (On butter_1 kitchen_table_butter_init_region)
+    (On ketchup_1 kitchen_table_ketchup_init_region)
+    (On bbq_sauce_1 kitchen_table_bbq_sauce_init_region)
+  )
+
+  (:goal
+    (And
+      (On target_milk plate_1)
+    )
+  )
+)

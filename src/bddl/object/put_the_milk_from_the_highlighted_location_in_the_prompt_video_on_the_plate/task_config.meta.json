@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1
+    ],
+    "timestep_exec_start_idx": [
+        -1
+    ],
+    "demo_summary": "Pick up the left milk and place it on the center plate.",
+    "memory": [
+        [
+            "put the left milk on the plate",
+            "placed the left milk on the center plate",
+            "picked up the milk carton on the left and put it on the plate"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ]
+    ],
+    "subtask_goals": [
+        {
+            "and": [
+                [
+                    "on",
+                    "milk_right",
+                    "plate_1"
+                ]
+            ]
+        }
+    ]
+}

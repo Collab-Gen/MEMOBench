@@ -1,0 +1,22 @@
+{
+    "key_frame": [
+        -1
+    ],
+    "memory": [
+        [
+            "checked middle drawer",
+            "opened and closed middle drawer",
+            "opened the middle drawer of the cabinet to check it, then closed it"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"], ["close", "wooden_cabinet_1_middle_region"]]}
+    ]
+}

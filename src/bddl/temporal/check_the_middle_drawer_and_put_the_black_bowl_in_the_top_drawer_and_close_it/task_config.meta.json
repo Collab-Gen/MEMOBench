@@ -1,0 +1,46 @@
+{
+    "key_frame": [
+        -1,
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "checked middle drawer",
+            "opened and closed middle drawer",
+            "opened the middle drawer of the cabinet to check it, then closed it"
+        ],
+        [
+            "opened top drawer",
+            "opened the top drawer",
+            "after checking the middle drawer, opened the top drawer of the cabinet to prepare placing the bowl"
+        ],
+        [
+            "placed bowl and closed",
+            "put the black bowl in the top drawer and closed it",
+            "placed the black bowl into the top drawer of the cabinet, then closed the top drawer"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"], ["close", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_top_region"]]},
+        {"and": [["in", "akita_black_bowl_1", "wooden_cabinet_1_top_region"], ["close", "wooden_cabinet_1_top_region"]]}
+    ]
+}

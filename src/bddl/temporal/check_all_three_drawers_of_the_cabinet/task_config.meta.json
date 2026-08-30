@@ -1,0 +1,46 @@
+{
+    "key_frame": [
+        -1,
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "checked one drawer",
+            "opened and closed top drawer",
+            "opened the top drawer of the cabinet to check it, then closed it, first of three drawers checked"
+        ],
+        [
+            "checked two drawers",
+            "opened and closed middle drawer",
+            "opened the middle drawer of the cabinet to check it, then closed it, two of three drawers checked"
+        ],
+        [
+            "checked all drawers",
+            "opened and closed all three drawers",
+            "opened the bottom drawer of the cabinet to check it, then closed it, all three drawers checked: top, middle, bottom"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            2,
+            2,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_top_region"], ["close", "wooden_cabinet_1_top_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"], ["close", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_bottom_region"], ["close", "wooden_cabinet_1_bottom_region"]]}
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "turned on stove",
+            "turned on the stove",
+            "turned on the stove by rotating the knob"
+        ],
+        [
+            "turned off stove",
+            "turned on and off the stove",
+            "turned on the stove, then turned it off by rotating the knob back"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasturnedon", "flat_stove_1"]]},
+        {"and": [["wasturnedon", "flat_stove_1"], ["turnoff", "flat_stove_1"]]}
+    ]
+}

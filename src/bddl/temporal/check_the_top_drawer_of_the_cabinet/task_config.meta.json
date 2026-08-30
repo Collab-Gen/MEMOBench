@@ -1,0 +1,22 @@
+{
+    "key_frame": [
+        -1
+    ],
+    "memory": [
+        [
+            "checked top drawer",
+            "opened and closed top drawer",
+            "opened the top drawer of the cabinet to check it, then closed it"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_top_region"], ["close", "wooden_cabinet_1_top_region"]]}
+    ]
+}

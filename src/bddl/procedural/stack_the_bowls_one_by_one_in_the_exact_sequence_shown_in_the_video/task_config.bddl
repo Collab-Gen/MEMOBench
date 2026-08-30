@@ -1,0 +1,37 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language stack the bowls one by one in the exact sequence shown in the video)
+
+  (:regions
+    (pos_left   (:target kitchen_table) (:ranges ( (0.05 -0.25  0.15 -0.15) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_mid    (:target kitchen_table) (:ranges ( (0.05 -0.05  0.15  0.05) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_right  (:target kitchen_table) (:ranges ( (0.05  0.15  0.15  0.25) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    bowl_left bowl_mid bowl_right - akita_black_bowl
+  )
+
+  (:obj_of_interest
+    bowl_left bowl_mid bowl_right
+  )
+
+  (:init
+    (On bowl_left kitchen_table_pos_left)
+    (On bowl_mid kitchen_table_pos_mid)
+    (On bowl_right kitchen_table_pos_right)
+  )
+
+  (:goal
+    (And
+      (Then 
+        (On bowl_left bowl_mid)
+        (On bowl_right bowl_left)
+      )
+    )
+  )
+)

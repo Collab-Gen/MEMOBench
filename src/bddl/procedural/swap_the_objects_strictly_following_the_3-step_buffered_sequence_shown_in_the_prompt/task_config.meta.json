@@ -1,0 +1,46 @@
+{
+    "key_frame": [
+        -1,
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "moved milk to buffer",
+            "moved the milk to the middle plate",
+            "moved the milk from the left plate to the middle buffer plate as step 1 of the swap"
+        ],
+        [
+            "moved butter to left",
+            "moved the butter to the left plate",
+            "moved the butter from the right plate to the now-empty left plate as step 2 of the swap"
+        ],
+        [
+            "completed swap",
+            "moved the milk to the right plate",
+            "moved the milk from the buffer plate to the right plate, completing the 3-step swap"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["on", "milk_1", "plate_mid"]]},
+        {"and": [["on", "butter_1", "plate_left"]]},
+        {"and": [["on", "milk_1", "plate_right"]]}
+    ]
+}

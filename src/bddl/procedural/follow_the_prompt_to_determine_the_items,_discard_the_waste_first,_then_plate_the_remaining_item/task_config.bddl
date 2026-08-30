@@ -1,0 +1,45 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language follow the prompt to determine the items, discard the waste first, then plate the remaining item)
+
+  (:regions
+    (bowl_region   (:target kitchen_table) (:ranges ( (0.05 -0.25 0.15 -0.15) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (plate_region  (:target kitchen_table) (:ranges ( (0.05  0.15 0.15  0.25) )) (:yaw_rotation ( (0.0 0.0) )))
+
+    (milk_region   (:target kitchen_table) (:ranges ( (0.10 -0.05 0.12 -0.03) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (butter_region (:target kitchen_table) (:ranges ( (0.10  0.03 0.12  0.05) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    bowl_1 - akita_black_bowl
+    plate_1 - plate
+    milk_1 - milk
+    butter_1 - butter
+  )
+
+  (:obj_of_interest
+    bowl_1 plate_1 milk_1 butter_1
+  )
+
+  (:init
+    (On bowl_1 kitchen_table_bowl_region)
+    (On plate_1 kitchen_table_plate_region)
+    (On milk_1 kitchen_table_milk_region)
+    (On butter_1 kitchen_table_butter_region)
+  )
+
+  (:goal
+    
+      (Then 
+        (On milk_1 bowl_1) 
+        (On butter_1 plate_1)
+      )
+    
+  )
+)

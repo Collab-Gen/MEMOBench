@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "cleared milk from plate",
+            "moved the milk to the bowl",
+            "cleared the milk from the plate by putting it into the bowl"
+        ],
+        [
+            "served butter on plate",
+            "put the butter on the plate",
+            "after clearing the milk, served the butter on the now-empty plate"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["on", "milk_1", "bowl_1"]]},
+        {"and": [["on", "butter_1", "plate_1"]]}
+    ]
+}

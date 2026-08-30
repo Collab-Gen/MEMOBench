@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "put butter in bowl",
+            "placed the butter into the bowl",
+            "placed the butter into the bowl as the first assembly step"
+        ],
+        [
+            "placed bowl on plate",
+            "put the bowl on the plate",
+            "completed assembly by placing the bowl with butter onto the plate"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["on", "butter_1", "bowl_1"]]},
+        {"and": [["on", "bowl_1", "plate_1"]]}
+    ]
+}

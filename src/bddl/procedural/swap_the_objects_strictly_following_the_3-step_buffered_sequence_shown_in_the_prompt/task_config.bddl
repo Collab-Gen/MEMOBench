@@ -1,0 +1,45 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language swap the objects strictly following the 3-step buffered sequence shown in the prompt)
+
+  (:regions
+    (pos_left   (:target kitchen_table) (:ranges ( (0.05 -0.25  0.15 -0.15) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_mid    (:target kitchen_table) (:ranges ( (0.05 -0.05  0.15  0.05) )) (:yaw_rotation ( (0.0 0.0) )))
+    (pos_right  (:target kitchen_table) (:ranges ( (0.05  0.15  0.15  0.25) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_left plate_mid plate_right - plate
+    milk_1 - milk
+    butter_1 - butter
+  )
+
+  (:obj_of_interest
+    plate_left plate_mid plate_right milk_1 butter_1
+  )
+
+  (:init
+    (On plate_left kitchen_table_pos_left)
+    (On plate_mid kitchen_table_pos_mid)
+    (On plate_right kitchen_table_pos_right)
+
+    (On milk_1 plate_left)
+    (On butter_1 plate_right)
+  )
+
+  (:goal
+    (And
+      (Then 
+        (On milk_1 plate_mid)
+        (Then 
+          (On butter_1 plate_left)
+          (On milk_1 plate_right)
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,46 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language execute the clear-and-serve procedure demonstrated in the prompt video)
+
+  (:regions
+    (plate_region
+      (:target kitchen_table) (:ranges ( (0.10 -0.05 0.15 0.05) )) (:yaw_rotation ( (0.0 0.0) ))
+    )
+
+    (bowl_region  (:target kitchen_table) (:ranges ( (0.05 -0.25 0.10 -0.15) )) (:yaw_rotation ( (0.0 0.0) )))
+    
+    (butter_region (:target kitchen_table) (:ranges ( (0.05  0.15 0.10  0.25) )) (:yaw_rotation ( (0.0 0.0) )))
+  )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    plate_1 - plate
+    bowl_1 - akita_black_bowl
+    butter_1 - butter
+    milk_1 - milk
+  )
+
+  (:obj_of_interest
+    plate_1 bowl_1 butter_1 milk_1
+  )
+
+  (:init
+    (On plate_1 kitchen_table_plate_region)
+    (On bowl_1 kitchen_table_bowl_region)
+    (On butter_1 kitchen_table_butter_region)
+
+    (On milk_1 plate_1)
+  )
+
+  (:goal
+    (And
+      (Then 
+        (On milk_1 bowl_1) 
+        (On butter_1 plate_1)
+      )
+    )
+  )
+)

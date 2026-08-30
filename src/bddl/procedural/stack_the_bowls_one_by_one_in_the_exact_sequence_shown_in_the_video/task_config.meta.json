@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "stacked left bowl onto mid bowl",
+            "placed the left bowl onto the mid bowl",
+            "placed the left bowl onto the mid bowl as the first step of stacking"
+        ],
+        [
+            "stacked right bowl on top",
+            "stacked the right bowl onto the left bowl",
+            "completed the bowl stacking by placing the right bowl onto the left bowl which was already on the mid bowl"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["on", "bowl_left", "bowl_mid"]]},
+        {"and": [["on", "bowl_right", "bowl_left"]]}
+    ]
+}

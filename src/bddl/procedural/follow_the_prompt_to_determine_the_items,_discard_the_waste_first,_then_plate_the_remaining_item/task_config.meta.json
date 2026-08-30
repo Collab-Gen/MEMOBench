@@ -1,0 +1,34 @@
+{
+    "key_frame": [
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "discarded milk into bowl",
+            "put the milk into the bowl as waste",
+            "identified milk as waste from the prompt and discarded it into the bowl"
+        ],
+        [
+            "plated butter",
+            "put the butter on the plate",
+            "after discarding the milk, placed the butter on the plate as the remaining item"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["on", "milk_1", "bowl_1"]]},
+        {"and": [["on", "butter_1", "plate_1"]]}
+    ]
+}

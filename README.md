@@ -12,3 +12,7 @@ MEMOBench is a process-level memory benchmark for robotic manipulation. It annot
 
 - [ ] Release data & assets
 - [x] Release benchmark codes
+
+## License
+
+MEMOBench is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see [LICENSE](LICENSE)): free for non-commercial scientific research with attribution; commercial use is not permitted. Third-party code under `src/third_party/` (e.g., LIBERO) remains under its own license (MIT).

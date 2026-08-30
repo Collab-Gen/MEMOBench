@@ -10,5 +10,5 @@ MEMOBench is a process-level memory benchmark for robotic manipulation. It annot
 
 ## TODO list
 
-- [ ] Release data
-- [ ] Release benchmark codes
+- [ ] Release data & assets
+- [x] Release benchmark codes

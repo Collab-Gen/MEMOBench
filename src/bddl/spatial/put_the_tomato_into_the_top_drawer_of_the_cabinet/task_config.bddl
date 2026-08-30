@@ -1,0 +1,68 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the tomato into the top drawer of the cabinet)
+    (:regions
+      (wooden_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 -0.31 0.01 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (box_of_oatmeal_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.14 -0.01 0.22 0.07)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (beefsteak_tomato_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.06 0.00 0.02 0.08)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_region
+          (:target wooden_cabinet_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    wooden_cabinet_1 - wooden_cabinet
+  )
+
+  (:objects
+    box_of_oatmeal__3_1 - box_of_oatmeal__3
+    beefsteak_tomato__1_1 - beefsteak_tomato__1
+  )
+
+  (:obj_of_interest
+    wooden_cabinet_1
+    box_of_oatmeal__3_1
+    beefsteak_tomato__1_1
+  )
+
+  (:init
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
+    (On box_of_oatmeal__3_1 kitchen_table_box_of_oatmeal_init_region)
+    (On beefsteak_tomato__1_1 kitchen_table_beefsteak_tomato_init_region)
+  )
+
+  (:goal
+    (And (In beefsteak_tomato__1_1 wooden_cabinet_1_top_region) (Close wooden_cabinet_1_top_region))
+  )
+)

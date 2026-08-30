@@ -1,0 +1,82 @@
+{
+    "key_frame": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "opened top drawer",
+            "opened the top drawer of the cabinet",
+            "opened the top drawer of the cabinet"
+        ],
+        [
+            "put artichoke in",
+            "put the artichoke into the top drawer",
+            "put the artichoke into the top drawer of the cabinet"
+        ],
+        [
+            "closed top drawer",
+            "closed the top drawer of the cabinet",
+            "closed the top drawer of the cabinet after putting the artichoke in"
+        ],
+        [
+            "opened middle drawer",
+            "opened the middle drawer of the cabinet",
+            "opened the middle drawer of the cabinet"
+        ],
+        [
+            "put chestnut in",
+            "put the chestnut into the middle drawer",
+            "put the chestnut into the middle drawer of the cabinet"
+        ],
+        [
+            "closed middle drawer",
+            "closed the middle drawer of the cabinet",
+            "closed the middle drawer of the cabinet after putting the chestnut in, both items now in their respective drawers"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            2,
+            2,
+            2
+        ],
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            2,
+            2,
+            2
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_top_region"]]},
+        {"and": [["in", "artichoke_1", "wooden_cabinet_1_top_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_top_region"], ["close", "wooden_cabinet_1_top_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["in", "chestnut__2_1", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"], ["close", "wooden_cabinet_1_middle_region"]]}
+    ]
+}

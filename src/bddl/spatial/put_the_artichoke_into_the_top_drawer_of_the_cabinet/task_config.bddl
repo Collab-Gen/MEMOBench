@@ -1,0 +1,69 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the artichoke into the top drawer of the cabinet)
+    (:regions
+      (wooden_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 -0.31 0.01 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (bottle_of_detergent_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.14 -0.01 0.22 0.07)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (artichoke_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.06 0.00 0.02 0.08)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_region
+          (:target wooden_cabinet_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    wooden_cabinet_1 - wooden_cabinet
+  )
+
+  (:objects
+    bottle_of_detergent__1_1 - bottle_of_detergent__1
+    artichoke_1 - artichoke
+  )
+
+  (:obj_of_interest
+    wooden_cabinet_1
+    bottle_of_detergent__1_1
+    artichoke_1
+  )
+
+  (:init
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
+    (On bottle_of_detergent__1_1 kitchen_table_bottle_of_detergent_init_region)
+    (On artichoke_1 kitchen_table_artichoke_init_region)
+  )
+
+  (:goal
+    (And (In artichoke_1 wooden_cabinet_1_top_region) (Close wooden_cabinet_1_top_region))
+  )
+
+)

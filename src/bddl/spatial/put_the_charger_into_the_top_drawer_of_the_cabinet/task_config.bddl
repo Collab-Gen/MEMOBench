@@ -1,0 +1,68 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the charger into the top drawer of the cabinet)
+    (:regions
+      (wooden_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 -0.31 0.01 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (bottle_of_fabric_softener_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.14 -0.01 0.22 0.07)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (charger_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.06 0.00 0.02 0.08)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_region
+          (:target wooden_cabinet_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    wooden_cabinet_1 - wooden_cabinet
+  )
+
+  (:objects
+    bottle_of_fabric_softener_1 - bottle_of_fabric_softener
+    charger_1 - charger
+  )
+
+  (:obj_of_interest
+    wooden_cabinet_1
+    bottle_of_fabric_softener_1
+    charger_1
+  )
+
+  (:init
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
+    (On bottle_of_fabric_softener_1 kitchen_table_bottle_of_fabric_softener_init_region)
+    (On charger_1 kitchen_table_charger_init_region)
+  )
+
+  (:goal
+    (And (In charger_1 wooden_cabinet_1_top_region) (Close wooden_cabinet_1_top_region))
+  )
+)

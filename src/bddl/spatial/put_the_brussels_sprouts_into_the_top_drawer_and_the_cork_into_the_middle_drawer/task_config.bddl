@@ -1,0 +1,100 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language put the brussels sprouts into the top drawer and the cork into the middle drawer of the cabinet)
+    (:regions
+      (wooden_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 -0.31 0.01 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (bottle_of_protein_powder_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.14 -0.01 0.22 0.07)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (brussels_sprouts_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.06 0.00 0.02 0.08)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (box_of_flour_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (0.14 0.26 0.22 0.34)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (cork_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.03 0.37 0.05 0.45)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_region
+          (:target wooden_cabinet_1)
+      )
+      (middle_region
+          (:target wooden_cabinet_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    wooden_cabinet_1 - wooden_cabinet
+  )
+
+  (:objects
+    bottle_of_protein_powder__2_1 - bottle_of_protein_powder__2
+    box_of_flour_1 - box_of_flour
+    brussels_sprouts__2_1 - brussels_sprouts__2
+    cork__3_1 - cork__3
+  )
+
+  (:obj_of_interest
+    wooden_cabinet_1
+    bottle_of_protein_powder__2_1
+    box_of_flour_1
+    brussels_sprouts__2_1
+    cork__3_1
+  )
+
+  (:init
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
+    (On bottle_of_protein_powder__2_1 kitchen_table_bottle_of_protein_powder_init_region)
+    (On box_of_flour_1 kitchen_table_box_of_flour_init_region)
+    (On brussels_sprouts__2_1 kitchen_table_brussels_sprouts_init_region)
+    (On cork__3_1 kitchen_table_cork_init_region)
+  )
+
+  (:goal
+    (And (In brussels_sprouts__2_1 wooden_cabinet_1_top_region) (In cork__3_1 wooden_cabinet_1_middle_region) (Close wooden_cabinet_1_top_region) (Close wooden_cabinet_1_middle_region))
+  )
+
+)

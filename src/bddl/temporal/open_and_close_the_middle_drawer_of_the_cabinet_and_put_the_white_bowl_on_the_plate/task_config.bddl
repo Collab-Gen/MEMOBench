@@ -1,11 +1,11 @@
 (define (problem LIBERO_Kitchen_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language open and close the microwave and put the white bowl on the plate)
+  (:language open and close the middle drawer of the cabinet and put the white bowl on the plate)
     (:regions
-      (microwave_init_region
+      (wooden_cabinet_init_region
           (:target kitchen_table)
           (:ranges (
-              (-0.01 -0.26 0.01 -0.24)
+              (-0.01 -0.31 0.01 -0.29)
             )
           )
           (:yaw_rotation (
@@ -17,24 +17,27 @@
           (:target kitchen_table)
           (:ranges (
               (-0.025 -0.025 0.025 0.025)
-            )
+          )
           )
           (:yaw_rotation (
               (0.0 0.0)
             )
           )
       )
-      (top_side
-          (:target microwave_1)
+      (top_region
+          (:target wooden_cabinet_1)
       )
-      (heating_region
-          (:target microwave_1)
+      (middle_region
+          (:target wooden_cabinet_1)
+      )
+      (bottom_region
+          (:target wooden_cabinet_1)
       )
     )
 
   (:fixtures
     kitchen_table - kitchen_table
-    microwave_1 - microwave
+    wooden_cabinet_1 - wooden_cabinet
   )
 
   (:objects
@@ -43,20 +46,18 @@
   )
 
   (:obj_of_interest
-    microwave_1
+    wooden_cabinet_1
     white_bowl_1
     plate_1
   )
 
   (:init
-    (On white_bowl_1 microwave_1_top_side)
-    (On microwave_1 kitchen_table_microwave_init_region)
-    (Close microwave_1)
+    (On white_bowl_1 wooden_cabinet_1_top_region)
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
     (On plate_1 kitchen_table_plate_init_region)
   )
 
   (:goal
-    (And (WasOpen microwave_1) (Close microwave_1) (On white_bowl_1 plate_1))
+    (And (WasOpen wooden_cabinet_1_middle_region) (Close wooden_cabinet_1_middle_region) (On white_bowl_1 plate_1))
   )
-
 )

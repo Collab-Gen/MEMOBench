@@ -1,0 +1,46 @@
+{
+    "key_frame": [
+        -1,
+        -1,
+        -1
+    ],
+    "memory": [
+        [
+            "opened the middle drawer of the cabinet",
+            "opened the middle drawer",
+            "pulled open the middle drawer to check inside"
+        ],
+        [
+            "closed the middle drawer",
+            "opened and closed the middle drawer",
+            "opened the middle drawer and then pushed it closed"
+        ],
+        [
+            "placed the white bowl on the plate",
+            "put the bowl on the plate",
+            "after closing the drawer, placed the white bowl on the plate"
+        ]
+    ],
+    "operating_type": [
+        [
+            0,
+            0,
+            0
+        ],
+        [
+            1,
+            1,
+            1
+        ],
+        [
+            1,
+            1,
+            1
+        ]
+    ],
+    "subtask_goals": [
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["wasopen", "wooden_cabinet_1_middle_region"], ["close", "wooden_cabinet_1_middle_region"]]},
+        {"and": [["on", "white_bowl_1", "plate_1"]]}
+    ]
+}

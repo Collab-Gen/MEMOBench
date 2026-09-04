@@ -8,10 +8,9 @@
 
 MEMOBench is a process-level memory benchmark for robotic manipulation. It annotates 30 history-dependent tasks with 4,200 executable checkpoints labeling three memory operations: Storage, Update, and Compression. Evaluations show leading VLA policies store information well but fail to update and compress it, reaching only 31.9% average success.
 
-## TODO list
+## Dataset & object assets
 
-- [ ] Release data & assets
-- [x] Release benchmark codes
+Both are available at [HuggingFace](https://huggingface.co/datasets/SunSeaLucky/MEMOBench).
 
 ## License
 

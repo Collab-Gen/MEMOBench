@@ -67,3 +67,19 @@ python src/get_object_pool.py   # writes .scrapy/objects.json
 ## License
 
 MEMOBench is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see [LICENSE](LICENSE)): free for non-commercial scientific research with attribution; commercial use is not permitted. Third-party code under `src/third_party/` (e.g., LIBERO) remains under its own license (MIT).
+
+## Citation
+
+If you find this work useful, please cite:
+
+```
+@misc{sun2026memobenchprocesslevelmemory,
+      title={MEMOBench: A Process Level Memory Benchmark for Robotic Manipulation}, 
+      author={Haiyang Sun and Haoxiao Wang and Junming Chen and Weicheng Fang and Zihao Su and Jingkun Yi and Wenyou Yi and Hao Chen and Zhou Zhao},
+      year={2026},
+      eprint={2609.07047},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2609.07047}, 
+}
+```

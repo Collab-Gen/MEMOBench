@@ -1,6 +1,10 @@
 <h1 align="center">MEMOBench</h1>
 
 <p align="center">
+  <a href="https://arxiv.org/abs/2609.07047"><img src="https://img.shields.io/badge/arXiv-2609.07047-b31b1b?style=for-the-badge" alt="arXiv"></a>
+</p>
+
+<p align="center">
   <img src="assets/teaser.png" alt="MEMOBench benchmark suite overview" width="90%">
 </p>
 
